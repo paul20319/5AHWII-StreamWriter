@@ -108,6 +108,7 @@ $GitHubVariables = [ordered]@{
   ACR_LOGIN_SERVER      = $RegistryLoginServer
   IMAGE_NAME            = 'streamwriter'
 }
+
 foreach ($Entry in $GitHubVariables.GetEnumerator()) {
   gh variable set $Entry.Key --repo $GitHubRepo --body $Entry.Value
 }
